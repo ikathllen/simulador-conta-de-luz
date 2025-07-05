@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulador de Conta de Luz</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main class="container" role="main">
+    <h1>Simulador de Conta de Luz</h1>
+
+    <form id="form" novalidate aria-describedby="form-error">
+      <label for="regiao">Selecione a região:</label>
+      <select id="regiao" aria-required="true" required>
+        <option value="" disabled selected>-- Escolha a região --</option>
+        <option value="Norte">Norte</option>
+        <option value="Nordeste">Nordeste</option>
+        <option value="Sudeste">Sudeste</option>
+        <option value="Centro-Oeste">Centro-Oeste</option>
+        <option value="Sul">Sul</option>
+      </select>
+      <span class="error" id="regiao-error" aria-live="polite"></span>
+
+      <label for="distribuidora">Selecione a distribuidora:</label>
+      <select id="distribuidora" aria-required="true" required disabled>
+        <option value="" disabled selected>-- Escolha a distribuidora --</option>
+      </select>
+      <span class="error" id="distribuidora-error" aria-live="polite"></span>
+
+      <label for="anterior">Leitura anterior (kWh):</label>
+      <input
+        type="number"
+        id="anterior"
+        min="0"
+        step="0.01"
+        aria-required="true"
+        required
+        placeholder="Ex: 123"
+      />
+      <span class="error" id="anterior-error" aria-live="polite"></span>
+
+      <label for="atual">Leitura atual (kWh):</label>
+      <input
+        type="number"
+        id="atual"
+        min="0"
+        step="0.01"
+        aria-required="true"
+        required
+        placeholder="Ex: 200"
+      />
+      <span class="error" id="atual-error" aria-live="polite"></span>
+
+      <label for="bandeira">Selecione a bandeira tarifária:</label>
+      <select id="bandeira" aria-required="true" required>
+        <option value="verde" selected>Verde (sem taxa)</option>
+        <option value="amarela">Amarela (R$ 0,015/kWh)</option>
+        <option value="vermelha1">Vermelha 1 (R$ 0,045/kWh)</option>
+        <option value="vermelha2">Vermelha 2 (R$ 0,09/kWh)</option>
+      </select>
+      <span class="error" id="bandeira-error" aria-live="polite"></span>
+      <button type="submit" id="btnCalcular" disabled>Calcular</button>
+    </form>
+    <section id="resultado" aria-live="polite" role="region" aria-label="Resultado do cálculo"></section>
+    
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
