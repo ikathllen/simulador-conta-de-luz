@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Histórico de Consumo</title>
+  <link rel="stylesheet" href="style/historico.css" />
+</head>
+<body>
+  <main class="container" role="main">
+    <h1>📜 Histórico de Consumo</h1>
+
+    <section class="filtro-mes">
+      <label for="filtroMes">Filtrar por mês:</label>
+      <input type="month" id="filtroMes" />
+      <button id="btnLimparFiltro" title="Mostrar todos os registros">Limpar filtro</button>
+    </section>
+
+   <section class="tabela-historico">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Leitura Atual (kWh)</th>
+            <th>Consumo (kWh)</th>
+            <th>Valor (R$)</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaCorpo">
+          <!-- Linhas via JS -->
+        </tbody>
+      </table>
+    </section>
+
+
+
+    <nav class="navegacao">
+      <button id="btnVoltarSimulador">🔙 Simulador</button>
+      <button id="btnIrDashboard">📊 Dashboard</button>
+    </nav>
+  </main>
+
+  <!-- Scripts -->
+  <script src="script/utils.js"></script>
+  <script src="script/historico.js"></script>
+</body>
+</html>

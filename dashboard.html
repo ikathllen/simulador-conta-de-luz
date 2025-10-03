@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard Consumo de Energia</title>
+  <link rel="stylesheet" href="style/dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Dashboard Consumo de Energia</h1>
+
+    <div class="filtros">
+      <div class="filtro-ano">
+        <label for="filtroAno">Filtrar Ano:</label>
+        <select id="filtroAno"></select>
+      </div>
+      <button id="btnLimparFiltroDash">Limpar Filtros</button>
+    </div>
+
+    <div class="graficos">
+      <canvas id="graficoConsumoMesAno" height="180"></canvas>
+      <canvas id="graficoValorMesAno" height="180"></canvas>
+      <div class="filtro-mes">
+        <label for="filtroMes">Filtrar Mês:</label>
+        <select id="filtroMes"></select>
+      </div>
+      <canvas id="graficoConsumoMesesAnos" height="180"></canvas>
+    </div>
+
+    <div class="tabela-resumo">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Consumo (kWh)</th>
+            <th>Valor (R$)</th>
+          </tr>
+        </thead>
+        <tbody id="resumoTabela">
+          <!-- Linhas preenchidas pelo JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="navegacao">
+      <button id="btnVoltarSimulador">Voltar para Simulador</button>
+      <button id="btnIrHistorico">Ir para Histórico</button>
+    </div>
+  </div>
+
+  <script src="script/dashboard.js"></script>
+</body>
+</html>
