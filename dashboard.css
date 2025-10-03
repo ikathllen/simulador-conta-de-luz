@@ -1,0 +1,151 @@
+@import url('index.css');
+
+.container {
+  max-width: 1100px; /* maior que antes */
+  margin: 3rem auto;  /* mais espaço em cima */
+  background: var(--branco);
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+h1 {
+  text-align: center;
+  color: var(--azul-marinho);
+  margin-bottom: 2rem;
+}
+
+.filtro-ano, .filtro-mes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.filtro-ano label, .filtro-mes label {
+  font-weight: 600;
+  color: var(--azul-marinho);
+}
+
+.filtro-ano select, .filtro-mes select {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--cinza);
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.filtro-ano select:focus, .filtro-mes select:focus {
+  outline: none;
+  border-color: var(--azul-marinho);
+}
+
+.graficos canvas {
+  background: var(--branco);
+  margin: 0 auto 2rem;
+  width: 100% !important;
+  max-width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  border-radius: 8px;
+}
+
+.tabela-resumo {
+  margin-top: 2rem;
+}
+
+.tabela-resumo table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--branco);
+}
+
+.tabela-resumo th,
+.tabela-resumo td {
+  border: 1px solid var(--cinza);
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.tabela-resumo th {
+  background-color: var(--cinza-claro);
+  color: var(--azul-marinho);
+}
+
+.sem-registros {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.navegacao {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.navegacao button {
+  padding: 0.8rem 1.4rem;
+  font-size: 1.1rem;
+  background-color: var(--azul-marinho);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.navegacao button:hover {
+  background-color: #1b2c3d;
+}
+
+/* botão limpar filtro */
+#btnLimparFiltroDash {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--azul-marinho);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  margin-left: auto;
+  display: block;
+  max-width: 180px;
+}
+
+#btnLimparFiltroDash:hover,
+#btnLimparFiltroDash:focus {
+  background-color: #1b2c3d;
+  outline: none;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .container {
+    margin: 2rem 1rem;
+    padding: 2rem;
+  }
+
+  .filtro-ano, .filtro-mes {
+    flex-direction: column;
+  }
+
+  .navegacao {
+    flex-direction: column;
+  }
+
+  .navegacao button {
+    width: 100%;
+  }
+
+  #btnLimparFiltroDash {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,119 @@
+@import url('index.css');
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: var(--branco);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--azul-marinho);
+}
+
+.filtro-mes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filtro-mes input[type="month"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.tabela-historico table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Força colunas com largura igual */
+}
+
+.tabela-historico th,
+.tabela-historico td {
+  border: 1px solid var(--cinza);
+  padding: 0.75rem;
+  text-align: center;
+  word-break: break-word;
+  font-size: 0.95rem;
+}
+
+.tabela-historico th {
+  background-color: var(--cinza-claro);
+  color: var(--azul-marinho);
+}
+
+.tabela-historico td .btn-excluir {
+  background-color: transparent;
+  border: none;
+  color: #b22222;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.tabela-historico td .btn-excluir:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+.sem-registros {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 1rem;
+}
+
+/* Navegação */
+.navegacao {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.navegacao button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--azul-marinho);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.navegacao button:hover {
+  background-color: #1b2c3d;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .filtro-mes {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navegacao {
+    flex-direction: column;
+  }
+
+  .navegacao button {
+    width: 100%;
+  }
+
+  .tabela-historico th,
+  .tabela-historico td {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}
