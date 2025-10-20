@@ -2,10 +2,10 @@
 
 // Dados globais e funções utilitárias comuns
 const bandeirasTaxa = {
-  verde: 0,
-  amarela: 0.015,
+  verde: 0.000,
+  amarela: 0.019,
   vermelha1: 0.045,
-  vermelha2: 0.09,
+  vermelha2: 0.079,
 };
 
 // ----- Funções para Histórico -----
@@ -425,3 +425,4 @@ document.addEventListener('DOMContentLoaded', () => {
     rodarDashboard();
   }
 });
+
